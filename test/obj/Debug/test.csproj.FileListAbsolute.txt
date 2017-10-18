@@ -1,0 +1,11 @@
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\bin\Debug\test.exe.config
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\bin\Debug\test.exe
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\bin\Debug\test.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\bin\Debug\Domain.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\bin\Debug\Domain.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.Form1.resources
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.Properties.Resources.resources
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.csproj.GenerateResource.Cache
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.exe
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\test\obj\Debug\test.pdb

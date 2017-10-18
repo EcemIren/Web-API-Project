@@ -1,0 +1,5 @@
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Domain\bin\Debug\Domain.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Domain\bin\Debug\Domain.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Domain\obj\Debug\Domain.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Domain\obj\Debug\Domain.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

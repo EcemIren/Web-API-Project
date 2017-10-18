@@ -1,0 +1,7 @@
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\bin\Debug\Services.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\bin\Debug\Services.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\bin\Debug\Domain.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\bin\Debug\Domain.pdb
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\obj\Debug\Services.dll
+C:\Users\ASUS\Documents\Visual Studio 2015\Projects\MainChamber\Services\obj\Debug\Services.pdb

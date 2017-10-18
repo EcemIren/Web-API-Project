@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Fetching data from Server";
+}
+<h2>Business Items</h2>
+
+<script src="Scripts/jquery-1.12.4.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        var uri = 'http://localhost:37720/api/values';
+        var button;
+        var button2;
+
+        $("#btnLoad").click(function () {
+            $.ajax({
+                url: uri,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                   
+                    var table = $("<table/>").addClass("table table-responsive table-bordered");
+                    var header = $("<thead/>").html("<tr><th>ItemId</th><th>Start Date</th><th>End Date</th><th>Start Time</th><th>End Time</th><th>Description</th></tr>");
+                    table.append(header);
+                    $.each(data, function (i,val) {
+                        var row = $("<tr/>");
+                        button = $("<button >Details</button>");
+                        button.click(function (evt) {
+
+                            var cell = $(evt.target).closest("tr").children().first();
+                            var itemID = cell.text();
+                            var uri = 'http://localhost:37720/api/values/' + itemID;
+                            $.ajax({
+                                url: uri,
+                                type: 'GET',
+                                dataType: 'json',
+                                success: function (data) {
+                              
+                                    var table = $("<table/>").addClass("table table-responsive table-bordered");
+                                    var header = $("<thead/>").html("<tr><th>Category</th><th>Member Id</th><th>Member Name</th></tr>");
+                                    table.append(header);
+
+                                    var row = $("<tr/>");
+                                    button2 = $("<button>Member Details</button>");
+                                    button2.click(function (evt) {
+                                        var cell2 = $(evt.target).parent().parent("tr").find("td:nth-child(2)");
+                                        var memberID = cell2.text();
+                                        var uri = 'http://localhost:37720/api/members/' + memberID;
+                                        $.ajax({
+                                            url: uri,
+                                            type: 'GET',
+                                            dataType: 'json',
+                                            success: function (data) {
+                                 
+                                           
+                                                var table = $("<table/>").addClass("table table-responsive table-bordered");
+                                                var header = $("<thead/>").html("<tr><th>Party</th><th>Member From</th><th>Full Title</th></tr>");
+                                                table.append(header);
+
+                                                var row = $("<tr/>");
+                                                row.append($("<td/>").html(data.party));
+                                                row.append($("<td/>").html(data.memberFrom));
+                                                row.append($("<td/>").html(data.fullTitle));
+                                               
+                                                table.append(row);
+                                                 $("#memberDetailPanel").html(table);
+                                            },
+                                            
+                                            error: function () {
+                                                alert("An error occured while getting data");
+                                            }
+                                     });
+                                    }); 
+                              
+
+                                    if (data.category == null) {
+                                        row.append($("<td/>").html("No Category Information"));
+                                    }
+
+                                    else {
+                                        row.append($("<td/>").html(data.category));
+                                    }
+
+                                    if (data.allmembers.length == 0) {
+                                      
+                                        row.append($("<td/>").html("No Member Id"));
+                                        row.append($("<td/>").html("No Member Name"));
+                                    }
+
+                                    else {
+
+                                        for (var i = 0; i < data.allmembers.length; i++) {
+
+                                            row.append($("<td/>").html(data.allmembers[i].memberId));
+                                            row.append($("<td/>").html(data.allmembers[i].name));
+                                            row.append($("<td/>").html(button2));
+                                        }
+                                    }
+
+                                    table.append(row);
+
+                                    $("#itemDetailPanel").html(table);
+                                },
+                                error: function () {
+                                    alert("An error occured while getting data");
+                                }
+                            });
+                        });
+                      
+                        row.append($("<td/>").html(val.itemId));
+                        row.append($("<td/>").html(val.startDate));
+                        row.append($("<td/>").html(val.endDate));
+                        row.append($("<td/>").html(val.startTime));
+                        row.append($("<td/>").html(val.endTime));
+                        row.append($("<td/>").html(val.description));
+                       // row.append($("<td/>").html( $("#btnDetail")));
+                        row.append($("<td/>").html(button));
+                    
+                        table.append(row);
+                    });
+                    $("#diplayPanel").html(table);
+                },
+                   error: function () {
+                    alert("An error occured while getting data");
+                }
+            });
+        });
+ });
+</script>
+
+<div>
+    <input type="button" class="btn btn-success" value="Current Week Items" id="btnLoad" />
+
+    <br /><br />
+    <div id="diplayPanel"></div>
+    <div id="itemDetailPanel"></div>
+    <div id="memberDetailPanel"></div>
+</div>
